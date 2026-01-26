@@ -1,0 +1,57 @@
+/* Main footer container - dark background with centered content */
+.footer_outer_container {
+  background-color: #111;
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner container - constrains footer width to 60% for better layout */
+.footer_inner_container {
+  width: 60%;
+}
+
+/* Social media icons section - white icons spread evenly */
+.footer_icons {
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  color: #fff;
+}
+
+/* Footer data container - displays 4 columns of links evenly spaced */
+.footer_data {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* List styling - removes bullets and arranges items vertically with spacing */
+.footer_data ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Footer links - pointer cursor indicates they are clickable */
+.footer_data ul li {
+  cursor: pointer;
+}
+
+/* Service code button - boxed button with border, clickable */
+.service_code {
+  display: flex;
+  align-content: center;
+  border: 1px solid;
+  width: 14%;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+/* Copyright text - smaller font at bottom of footer */
+.copy-write {
+  font-size: 12px;
+  margin-bottom: 10px;
+}

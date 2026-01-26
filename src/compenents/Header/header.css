@@ -1,0 +1,41 @@
+/* Main header container - sticky positioned dark header with smooth transitions */
+.header_outer_container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 20, 20);
+  height: 10vh;
+  color: white;
+  transition: all 0.5s;
+  transition-timing-function: ease-in;
+  z-index: 1;
+}
+
+/* Applied when header scrolls - maintains dark background */
+.nav_black {
+  background-color: rgb(20, 20, 20);
+}
+
+/* Header inner container - constrains width to 90% and spreads content */
+.header_container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left navigation - logo and menu items displayed horizontally */
+.header_left ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+/* Right navigation - user options displayed horizontally */
+.header_right ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
