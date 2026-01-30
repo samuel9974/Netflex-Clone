@@ -3,7 +3,7 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 const requests = {
   // Fetch trending TV shows
-  fetchTrending: `/discover/tv/trending?api_key=${API_KEY}&language=en-US`,
+  fetchTrending: `/trending/tv/week?api_key=${API_KEY}&language=en-US`,
 
   // Fetch Netflix original series
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
