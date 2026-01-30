@@ -9,7 +9,7 @@ const requests = {
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
 
   // Fetch top rated movies
-  fetchTopRated: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
+  fetchTopRatedMovies: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
 
   // Fetch action movies (genre id: 28)
   fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
@@ -25,6 +25,9 @@ const requests = {
 
   // Fetch documentaries (genre id: 99)
   fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
+
+  // Fetch TV Shows
+  fetchTvShow: `/discover/tv?api_key=${API_KEY}&language=en-US`,
 };
 
 export default requests;
