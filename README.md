@@ -239,7 +239,6 @@ This project is created for educational purposes as part of Evangadi Academy's P
 ## 👨‍💻 Author
 
 **Samuel**  
-Evangadi Academy - Phase 4 Student
 
 ---
 
