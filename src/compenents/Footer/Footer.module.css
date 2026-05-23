@@ -1,0 +1,128 @@
+/* =========================================================
+   Footer — CSS Module (Footer.jsx)
+   Netflix-style site footer: social icons, link columns, copyright.
+   Mobile-first: 1 column → 2 columns (500px) → 4 columns (740px).
+   ========================================================= */
+
+/* .footer — Outer footer wrapper
+   Purpose: Full-width dark background and base typography for the footer.
+   Colors: background #111010, muted text #757575. */
+.footer {
+  background-color: #111010;
+  color: #757575;
+  padding: 48px 16px;
+  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* .inner — Content width constraint
+   Purpose: Centers footer content and caps width at 1000px. */
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ---------- Social icons ---------- */
+
+/* .socialList — Horizontal list of social links
+   Purpose: Flex row of icon buttons with spacing below. */
+.socialList {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0 0 28px 0;
+}
+
+/* .socialLink — Individual social icon anchor
+   Purpose: White icon with hover lift and color fade.
+   States: :hover and :focus-visible lighten icon color. */
+.socialLink {
+  color: #fff;
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLink:hover,
+.socialLink:focus-visible {
+  color: #b3b3b3;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* ---------- Link grid ---------- */
+
+/* .linksGrid — Footer navigation columns container
+   Purpose: CSS grid for link columns; column count increases at breakpoints. */
+.linksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px 24px;
+  margin-bottom: 28px;
+}
+
+/* .linkColumn — Single column of footer links
+   Purpose: Vertical stack of link items with no list bullets. */
+.linkColumn {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* .link — Footer text link
+   Purpose: Muted gray link that brightens and underlines on hover/focus. */
+.link {
+  color: #757575;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ---------- Copyright ---------- */
+
+/* .copyright — Legal / copyright line
+   Purpose: Small muted text below the link grid. */
+.copyright {
+  font-size: 11px;
+  color: #757575;
+  margin: 0;
+}
+
+/* ---------- Responsive breakpoints ---------- */
+
+/* 500px+: Two-column link grid */
+@media (min-width: 500px) {
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 740px+: Four-column link grid and wider horizontal padding */
+@media (min-width: 740px) {
+  .footer {
+    padding: 48px 32px;
+  }
+  .linksGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 950px+: Extra vertical padding on large screens */
+@media (min-width: 950px) {
+  .footer {
+    padding: 60px 48px;
+  }
+}

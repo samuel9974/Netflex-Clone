@@ -1,5 +1,17 @@
+/* =========================================================
+   index.css — Global application styles (main.jsx)
+   Font imports, CSS custom properties, reset, and body background.
+   Applied to the entire app before component-level styles load.
+   ========================================================= */
+
+/* Google Fonts: Lexend (primary) and Inter (secondary) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* :root — Design tokens (CSS variables)
+   --font-base / --font-second-base: Typography families
+   --bg-color: Page background (#111)
+   --primary-color: Main text (#ffffff)
+   --secondary-color: Netflix red accent (#e50914) */
 :root {
   --font-base: "Lexend", sans-serif;
   --font-second-base: "Inter", sans-serif;
@@ -7,11 +19,17 @@
   --primary-color: #ffffff;
   --secondary-color: #e50914;
 }
+
+/* * — Universal box-sizing reset
+   Purpose: Removes default margin/padding; border-box for predictable layout. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* body — Page canvas
+   Purpose: Dark background matching Netflix clone theme (#111). */
 body {
   background-color: #111;
 }

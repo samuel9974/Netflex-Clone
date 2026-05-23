@@ -9,8 +9,43 @@
   cursor: pointer; /* Show clickable cursor when hovering */
 }
 
+/* Wrapper so left/right scroll buttons can sit on the row */
+.row_posters_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.row_scroll_btn {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.row_posters_wrapper:hover .row_scroll_btn {
+  opacity: 1;
+}
+
+.row_scroll_btn_left {
+  left: 0;
+}
+
+.row_scroll_btn_right {
+  right: 0;
+}
+
 /* Container for the horizontally scrollable row of posters */
 .row_posters {
+  flex: 1;
   display: flex; /* Horizontal layout */
   overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: scroll; /* Enable horizontal scrolling */

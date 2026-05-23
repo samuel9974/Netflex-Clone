@@ -1,4 +1,8 @@
-// API requests configuration - Contains all TMDB API endpoints for fetching different movie/show categories
+/**
+ * TMDB API path templates for each home page content row.
+ * Assumes VITE_API_KEY is set in the environment.
+ * @type {Object.<string, string>}
+ */
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 const requests = {

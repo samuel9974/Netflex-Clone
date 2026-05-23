@@ -1,0 +1,84 @@
+/* =========================================================
+   Banner — Global stylesheet (Banner.jsx)
+   Hero section at the top of the home page: backdrop image, title,
+   Play / My List buttons, truncated description, bottom fade gradient.
+   Background image is set inline via style in the component.
+   ========================================================= */
+
+/* .banner — Full-viewport hero container
+   Purpose: Tall hero area (80vh) with white text; backdrop applied in JSX. */
+.banner {
+  height: 80vh;
+  margin-bottom: 80px;
+  color: white;
+  object-fit: contain;
+}
+
+/* .banner_contents — Text and buttons overlay
+   Purpose: Positions title, buttons, and description over the backdrop. */
+.banner_contents {
+  margin-left: 0px;
+  padding-top: 199px;
+}
+
+/* .banner_title — Featured movie or show name
+   Purpose: Large bold headline (3rem) with top/bottom spacing. */
+.banner_title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.6rem;
+  padding-top: 15rem;
+}
+
+/* .banner_button — Action buttons (Play, My List)
+   Purpose: Semi-transparent dark pill buttons; shared base for all actions. */
+.banner_button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+  margin-right: 1rem;
+  border-radius: 0.3rem;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+/* .banner_description — Overview text block
+   Purpose: Limited-width synopsis; truncated to 150 chars in JSX. */
+.banner_description {
+  width: 45rem;
+  line-height: 1;
+  padding-top: 1rem;
+  font-size: 1rem;
+  max-width: 360px;
+  height: 80px;
+}
+
+/* .play — Primary Play button variant
+   Purpose: White background with black text (Netflix-style primary CTA). */
+.play {
+  color: #000;
+  background-color: #fff;
+}
+
+/* .banner_button:hover — Hover state for all banner buttons
+   Purpose: Light gray fill with black text and 0.25s transition. */
+.banner_button:hover {
+  color: #000;
+  background-color: #c6c6c6;
+  transition: all 0.25s;
+}
+
+/* .banner_fadeBottom — Gradient overlay at hero bottom
+   Purpose: Fades hero into page background (#111) for seamless scroll. */
+.banner_fadeBottom {
+  height: 40vh;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.91),
+    #111
+  );
+}

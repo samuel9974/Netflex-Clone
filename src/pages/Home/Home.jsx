@@ -4,12 +4,11 @@ import Footer from "../../compenents/Footer/Footer.jsx";
 import Banner from "../../compenents/Banner/Banner.jsx";
 import RowList from "../../compenents/Rows/RowsList/RowList.jsx";
 
-// Home Page Component: Main page layout for the Netflix Clone application
-// This component serves as the master page that combines all major sections:
-// - Header (Navigation bar)
-// - Banner (Hero section with featured content)
-// - RowList (All movie/show category rows)
-// - Footer (Copyright and links)
+/**
+ * Renders the main Netflix clone page layout: header, hero banner, content rows, and footer.
+ * Takes no parameters.
+ * @returns {import('react').ReactElement} - The full home page structure.
+ */
 const Home = () => {
   return (
     <div>

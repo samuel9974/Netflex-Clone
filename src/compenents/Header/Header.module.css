@@ -1,0 +1,334 @@
+/* =========================================================
+   Header — CSS Module (Header.jsx)
+   Fixed top navigation: logo, links, search, notifications, profile menu.
+   Transparent at top; .scrolled adds dark background after scroll.
+   Responsive: hides nav links below 768px; tightens spacing on smaller screens.
+   ========================================================= */
+
+/* .header — Fixed top navigation bar
+   Purpose: Full-width overlay header with blur; sits above page content (z-index 1000). */
+.header {
+  background: transparent;
+  padding: 16px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  transition: background-color 0.4s ease;
+}
+
+/* .scrolled — Header state when page is scrolled past ~50px
+   Purpose: Solid dark background for readability over content. */
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* .container — Inner flex row (logo | nav | actions)
+   Purpose: Max-width layout with horizontal padding and spacing between sections. */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+/* .logo — Netflix brand image
+   Purpose: Fixed-size logo with subtle hover opacity. */
+.logo {
+  flex-shrink: 0;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* ---------- Primary navigation ---------- */
+
+/* .nav — Horizontal nav link group
+   Purpose: Flex row of route links; hidden on mobile (see 768px breakpoint). */
+.nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  align-items: center;
+}
+
+/* .navLink — Single navigation link
+   Purpose: Light text with hover color transition. */
+.navLink {
+  color: #f5f5f1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #b3b3b0;
+}
+
+/* ---------- Right section (search, bell, profile) ---------- */
+
+/* .rightSection — Icon and profile controls cluster
+   Purpose: Flex group aligned to the right of the header. */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* .searchContainer — Search toggle + expandable input
+   Purpose: Relative wrapper so the input can sit beside the search button. */
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* .searchButton — Opens/closes inline search field
+   Purpose: Icon-only button; no background border. */
+.searchButton {
+  background: none;
+  border: none;
+  color: #f5f5f1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.searchButton:hover {
+  color: #b3b3b0;
+}
+
+/* .iconButton — Notification bell control
+   Purpose: Icon button; .notificationBadge is positioned on this element. */
+.iconButton {
+  position: relative;
+  background: none;
+  border: none;
+  color: #f5f5f1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.iconButton:hover {
+  color: #b3b3b0;
+}
+
+/* .notificationBadge — Unread count indicator on the bell
+   Purpose: Small red circle overlay on the notification icon. */
+.notificationBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e50914;
+}
+
+/* ---------- Profile menu ---------- */
+
+/* .profileContainer — Profile button + dropdown anchor
+   Purpose: position: relative for absolutely positioned .profileMenu. */
+.profileContainer {
+  position: relative;
+}
+
+/* .profileButton — Avatar and chevron toggle
+   Purpose: Opens profile dropdown; light hover background. */
+.profileButton {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f5f5f5;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.profileButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* .profileAvatar — Square user icon placeholder
+   Purpose: Gray rounded box containing the User icon. */
+.profileAvatar {
+  width: 32px;
+  height: 32px;
+  background-color: #564d4d;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  font-size: 16px;
+}
+
+/* .searchInput — Inline search text field (shown when search is open)
+   Purpose: Semi-transparent field with focus darkening and border highlight. */
+.searchInput {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #888888;
+  color: #f5f5f5;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: #f5f5f5;
+}
+
+.searchInput::placeholder {
+  color: #888888;
+}
+
+/* .profileMenu — Dropdown panel below profile button
+   Purpose: Dark panel with slideDown animation on open. */
+.profileMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid #404040;
+  border-radius: 4px;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  animation: slideDown 0.2s ease-out;
+}
+
+/* slideDown — Profile menu entrance animation
+   Purpose: Fade and slide menu into view from above. */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .profileMenuItem — Single row in the profile dropdown
+   Purpose: Full-width clickable link with hover highlight. */
+.profileMenuItem {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  color: #f5f5f5;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.profileMenuItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* .profileMenuDivider — Horizontal rule between menu groups */
+.profileMenuDivider {
+  border: none;
+  border-top: 1px solid #404040;
+  margin: 8px 0;
+}
+
+/* ---------- Responsive breakpoints ---------- */
+
+/* 1024px: Reduced padding and narrower search input */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+    gap: 24px;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .navLink {
+    font-size: 13px;
+  }
+
+  .searchInput {
+    width: 150px;
+  }
+}
+
+/* 768px: Hide primary nav; smaller logo and search */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .searchInput {
+    width: 120px;
+  }
+
+  .rightSection {
+    gap: 16px;
+  }
+}
+
+/* 480px: Minimal padding and compact search field */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .searchInput {
+    width: 100px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .rightSection {
+    gap: 12px;
+  }
+}
